@@ -1,0 +1,1 @@
+/usr/bin/c++   -lwiringPi -std=c++11 -pthread -g  -rdynamic CMakeFiles/tp2_mock.dir/main.cpp.o CMakeFiles/tp2_mock.dir/cpp_file/InputPin.cpp.o CMakeFiles/tp2_mock.dir/cpp_file/OutputPin.cpp.o CMakeFiles/tp2_mock.dir/cpp_file/Lock.cpp.o CMakeFiles/tp2_mock.dir/cpp_file/InputCallBack.cpp.o  -o tp2_mock 

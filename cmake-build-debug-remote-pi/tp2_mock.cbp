@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="tp2_mock"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/tmp/tp2_mock/cmake-build-debug-remote-pi"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tp2_mock/cmake-build-debug-remote-pi/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tp2_mock/cmake-build-debug-remote-pi/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tp2_mock/cmake-build-debug-remote-pi/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tp2_mock/cmake-build-debug-remote-pi/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/tmp/tp2_mock/cmake-build-debug-remote-pi"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tp2_mock/cmake-build-debug-remote-pi/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tp2_mock/cmake-build-debug-remote-pi/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tp2_mock/cmake-build-debug-remote-pi/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tp2_mock/cmake-build-debug-remote-pi/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="tp2_mock">
+				<Option output="/tmp/tp2_mock/cmake-build-debug-remote-pi/tp2_mock" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/tmp/tp2_mock/cmake-build-debug-remote-pi"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/arm-linux-gnueabihf/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/arm-linux-gnueabihf/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/arm-linux-gnueabihf/8/include-fixed"/>
+					<Add directory="/usr/include/arm-linux-gnueabihf"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tp2_mock/cmake-build-debug-remote-pi/Makefile&quot;  VERBOSE=1 tp2_mock"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tp2_mock/cmake-build-debug-remote-pi/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tp2_mock/cmake-build-debug-remote-pi/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tp2_mock/cmake-build-debug-remote-pi/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="tp2_mock/fast">
+				<Option output="/tmp/tp2_mock/cmake-build-debug-remote-pi/tp2_mock" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/tmp/tp2_mock/cmake-build-debug-remote-pi"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/arm-linux-gnueabihf/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/arm-linux-gnueabihf/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/arm-linux-gnueabihf/8/include-fixed"/>
+					<Add directory="/usr/include/arm-linux-gnueabihf"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tp2_mock/cmake-build-debug-remote-pi/Makefile&quot;  VERBOSE=1 tp2_mock/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tp2_mock/cmake-build-debug-remote-pi/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tp2_mock/cmake-build-debug-remote-pi/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tp2_mock/cmake-build-debug-remote-pi/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/tmp/tp2_mock/cmake-build-debug-remote-pi"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tp2_mock/cmake-build-debug-remote-pi/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tp2_mock/cmake-build-debug-remote-pi/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tp2_mock/cmake-build-debug-remote-pi/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tp2_mock/cmake-build-debug-remote-pi/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/tmp/tp2_mock/cpp_file/InputCallBack.cpp">
+			<Option target="tp2_mock"/>
+		</Unit>
+		<Unit filename="/tmp/tp2_mock/cpp_file/InputPin.cpp">
+			<Option target="tp2_mock"/>
+		</Unit>
+		<Unit filename="/tmp/tp2_mock/cpp_file/Lock.cpp">
+			<Option target="tp2_mock"/>
+		</Unit>
+		<Unit filename="/tmp/tp2_mock/cpp_file/OutputPin.cpp">
+			<Option target="tp2_mock"/>
+		</Unit>
+		<Unit filename="/tmp/tp2_mock/h_file/InputCallBack.h">
+			<Option target="tp2_mock"/>
+		</Unit>
+		<Unit filename="/tmp/tp2_mock/h_file/InputPin.h">
+			<Option target="tp2_mock"/>
+		</Unit>
+		<Unit filename="/tmp/tp2_mock/h_file/Lock.h">
+			<Option target="tp2_mock"/>
+		</Unit>
+		<Unit filename="/tmp/tp2_mock/h_file/OutputPin.h">
+			<Option target="tp2_mock"/>
+		</Unit>
+		<Unit filename="/tmp/tp2_mock/main.cpp">
+			<Option target="tp2_mock"/>
+		</Unit>
+		<Unit filename="/tmp/tp2_mock/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
