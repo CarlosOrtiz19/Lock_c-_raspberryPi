@@ -37,6 +37,7 @@ private:
     OutputPin outputPin_2{2};
     OutputPin outputPin_3{3};
 
+    void successfulUnlock();
 };
 
 

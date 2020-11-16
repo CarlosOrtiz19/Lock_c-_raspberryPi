@@ -6,33 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/tmp/tp2_mock/cpp_file/InputPin.cpp
-../h_file/InputPin.h
-/tmp/tp2_mock/h_file/InputPin.h
+/tmp/tp2_mock/cpp_file/InputCallBack.cpp
 wiringPi.h
 -
-
+../h_file/InputCallBack.h
 /tmp/tp2_mock/h_file/InputCallBack.h
 
-/tmp/tp2_mock/h_file/InputPin.h
-wiringPi.h
--
-InputCallBack.h
 /tmp/tp2_mock/h_file/InputCallBack.h
-
-/tmp/tp2_mock/h_file/Lock.h
-InputPin.h
-/tmp/tp2_mock/h_file/InputPin.h
-OutputPin.h
-/tmp/tp2_mock/h_file/OutputPin.h
-
-/tmp/tp2_mock/h_file/OutputPin.h
-wiringPi.h
--
-
-/tmp/tp2_mock/main.cpp
-iostream
--
-h_file/Lock.h
-/tmp/tp2_mock/h_file/Lock.h
 

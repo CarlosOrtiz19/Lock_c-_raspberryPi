@@ -28,7 +28,8 @@ void Lock::startSecurity() {
         int button_3 = inputPin_3.setInputState();
 
         if(!step_1){
-            if(inputPin_1.setInputState() == 1 && !keyOneactivated && !keyThreeActivate ){
+            std::cout << "step 1 "  << std::endl;;
+            if(inputPin_1.setInputState() == 1){
                 //std:: cout << "pulsation step 1 " << inputPin_1.setInputState() << std::endl; ;
                 outputPin_1.turnOn();
                 keyOneactivated = true;
@@ -39,7 +40,8 @@ void Lock::startSecurity() {
 
 
     if(step_1 && !step_2){
-            if(inputPin_2.setInputState() == 1 && keyOneactivated && !keyThreeActivate){
+        std::cout << "step 2 "  << std::endl;;
+            if(inputPin_2.setInputState() == 1 ){
                 //std:: cout << "pulsation input2" << inputPin_2.setInputState() << std::endl; ;
                 outputPin_2.turnOn();
                 keyTwoActivated = true;
@@ -47,13 +49,11 @@ void Lock::startSecurity() {
             } else if (button_1 || button_3) {
                 reset();
             }
-
-
         }
 
         if(step_1 && step_2 && !step_3) {
-            //std::cout << "pulsation 3" << inputPin_3.setInputState() << std::endl;;
-                if (inputPin_3.setInputState() == 1 && keyOneactivated && keyTwoActivated){
+            std::cout << "step 3"  << std::endl;;
+                if (inputPin_3.setInputState() == 1 ){
                     std::cout << "pulsation 3" << inputPin_3.setInputState() << std::endl;;
                     outputPin_3.turnOn();
                     keyThreeActivate = true;
@@ -63,7 +63,15 @@ void Lock::startSecurity() {
         }
 
         if(keyOneactivated && keyTwoActivated && keyThreeActivate){
-            //inputPin_1.startBlinking()
+            successfulUnlock();
+
+            std::this_thread::sleep_for(std::chrono::seconds(5));
+            outputPin_1.stopBlinking();
+            outputPin_2.stopBlinking();
+            outputPin_3.stopBlinking();
+            reset();
+            break;
+
         }
 
        // toggleStatePins(inputPin_1, outputPin_1);
@@ -79,6 +87,12 @@ void Lock::startSecurity() {
 
     }
 
+}
+
+void Lock::successfulUnlock() {
+    outputPin_1.startBlinking();
+    outputPin_2.startBlinking();
+    outputPin_3.startBlinking();
 }
 
 
