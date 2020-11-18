@@ -8,6 +8,7 @@
 
 #include "InputPin.h"
 #include "OutputPin.h"
+#include <vector>
 
 class Lock {
 
@@ -16,7 +17,7 @@ public:
     Lock();
     void toggleStatePins(InputPin inputPin, OutputPin outputPin);
     void startSecurity();
-
+    bool isPasswordCreated();
 
 private:
     bool keyOneactivated{false};
@@ -26,8 +27,8 @@ private:
     bool step_2{};
     bool step_3{};
     void reset();
-
-
+    std::vector<int> pins;
+    int counter{0};
 
     InputPin inputPin_1{23};
     InputPin inputPin_2{24};
@@ -37,7 +38,16 @@ private:
     OutputPin outputPin_2{2};
     OutputPin outputPin_3{3};
 
-    void successfulUnlock();
+    void successfullUnlock();
+
+
+    void blinkingOn();
+
+    void blinkingOff();
+
+    void resetSteps();
+
+    void resetKeys();
 };
 
 

@@ -7,7 +7,7 @@
 
 bool InputCallBack::operator()(bool signalState) {
     if(signalState){
-        delay(10);
+        delay(20);
     }
     return signalState;
 }

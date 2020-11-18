@@ -8,17 +8,9 @@
 
 class InputCallBack {
 
-private:
-    //not sure si here
-    int previousState{LOW};
-    int actualState{LOW};
-
 public:
     InputCallBack();
     bool operator()(bool state);
-
-
-
 };
 
 

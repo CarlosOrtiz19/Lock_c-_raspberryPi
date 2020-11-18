@@ -12,20 +12,19 @@ InputPin::InputPin(int inputPin) : inputPin(inputPin) {
     pinMode(inputPin,INPUT);
 }
 
-int InputPin::getInputState() {
-    return 0;
-}
-
 bool InputPin::setInputState() {
-    inputCallBack(previousState == actualState);
     previousState = actualState;
     actualState = digitalRead(inputPin);
-
+    inputCallBack(previousState != actualState);
     return (actualState == LOW) && (previousState == HIGH);
 }
 
-int InputPin::getState() {
-    digitalRead(inputPin);
+int InputPin::getPin() {
+    return inputPin;
+}
+
+InputPin::~InputPin() {
+
 }
 
 

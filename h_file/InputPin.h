@@ -14,22 +14,14 @@ class InputPin {
 public:
     InputPin(int inputPin);
     bool setInputState();
-    int getInputState();
+    int getPin();
+    virtual ~InputPin();
 
 private:
     InputCallBack inputCallBack {} ;
     int inputPin;
-    int state {0};
     int previousState{0};
     int actualState{0};
-    bool isButtonPressed();
-    bool lastClicked{false};
-    bool lastOutState {false};
-    int getState();
-
-
-
-
 };
 
 
