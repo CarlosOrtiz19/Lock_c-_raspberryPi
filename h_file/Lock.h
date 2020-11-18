@@ -48,6 +48,8 @@ private:
     void resetSteps();
 
     void resetKeys();
+
+    bool isInvalidKey(int button_1, int button_2, int button_3) const;
 };
 
 

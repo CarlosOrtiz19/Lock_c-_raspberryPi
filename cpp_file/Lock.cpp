@@ -40,36 +40,35 @@ void Lock::startSecurity() {
         int button_2 = pin2.setInputState();
         int button_3 = pin3.setInputState();
 
-        if (!step_1) {
-            if (pin1.setInputState() == 1) {
+        if (!step_1  ) {
+            if (pin1.setInputState() == 1 && !keyOneactivated && !keyThreeActivate) {
                 outputPin_1.turnOn();
                 keyOneactivated = true;
                 step_1 = true;
             }
         }
 
-        if (step_1 && !step_2) {
-            if (pin2.setInputState() == 1) {
+        if (step_1 && !step_2 ) {
+            if (pin2.setInputState() == 1 && keyOneactivated && !keyThreeActivate) {
                 outputPin_2.turnOn();
                 keyTwoActivated = true;
                 step_2 = true;
-            } else if (button_1 || button_3) {
+            } else if (isInvalidKey(button_1, button_2, button_3)) {
                 reset();
             }
         }
 
-        if (step_1 && step_2 && !step_3) {
-            if (pin3.setInputState() == 1) {
+        if (step_1 && step_2 && !step_3 ) {
+            if (pin3.setInputState() == 1 && keyOneactivated && keyTwoActivated) {
                 outputPin_3.turnOn();
                 keyThreeActivate = true;
-            } else if (button_1 || button_2) {
+            } else if (isInvalidKey(button_1, button_2, button_3)) {
                 reset();
             }
         }
 
         if (keyOneactivated && keyTwoActivated && keyThreeActivate) {
             successfullUnlock();
-
             std::this_thread::sleep_for(std::chrono::seconds(5));
             blinkingOff();
             reset();
@@ -77,6 +76,11 @@ void Lock::startSecurity() {
         }
     }
 }
+
+bool Lock::isInvalidKey(int button_1, int button_2, int button_3) const { return button_1 && step_1 || button_1 &&
+                                                                                                       step_2 || button_3 &&
+                                                                                                                 step_3 || button_2 &&
+                                                                                                                           step_2; }
 
 void Lock::successfullUnlock() {
     blinkingOn();
