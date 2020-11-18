@@ -9,21 +9,19 @@
 Lock::Lock() {}
 
 void Lock::reset() {
-    keyOneactivated = false;
-    keyTwoActivated = false;
-    keyThreeActivate = false;
-    step_1 = false;
-    step_2 = false;
-    step_3 = false;
-    //resetKeys();
-    //resetSteps();
-    blinkingOff();
-    std::cout << "reset" << std::endl;;
+    resetKeys();
+    resetSteps();
 
+    outputPin_1.turnOff();
+    outputPin_2.turnOff();
+    outputPin_3.turnOff();
+    std:: cout << "reset"  << std::endl; ;
 }
 
 void Lock::resetKeys() {
-
+    keyOneactivated=false;
+    keyTwoActivated=false;
+    keyThreeActivate=false;
 }
 
 void Lock::resetSteps() {

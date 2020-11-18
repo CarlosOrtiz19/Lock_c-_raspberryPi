@@ -15,7 +15,7 @@ InputPin::InputPin(int inputPin) : inputPin(inputPin) {
 bool InputPin::setInputState() {
     previousState = actualState;
     actualState = digitalRead(inputPin);
-    inputCallBack(previousState != actualState);
+    inputCallBack(previousState == actualState);
     return (actualState == LOW) && (previousState == HIGH);
 }
 
