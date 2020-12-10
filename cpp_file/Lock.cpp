@@ -11,17 +11,15 @@ Lock::Lock() {}
 void Lock::reset() {
     resetKeys();
     resetSteps();
-
     outputPin_1.turnOff();
     outputPin_2.turnOff();
     outputPin_3.turnOff();
-    std:: cout << "reset"  << std::endl; ;
 }
 
 void Lock::resetKeys() {
-    keyOneactivated=false;
-    keyTwoActivated=false;
-    keyThreeActivate=false;
+    keyOneactivated = false;
+    keyTwoActivated = false;
+    keyThreeActivate = false;
 }
 
 void Lock::resetSteps() {
@@ -31,25 +29,25 @@ void Lock::resetSteps() {
 }
 
 void Lock::startSecurity() {
-    InputPin pin1= pins.at(0);
-    InputPin pin2= pins.at(1);
-    InputPin pin3= pins.at(2);
+    InputPin pin1 = pins.at(0);
+    InputPin pin2 = pins.at(1);
+    InputPin pin3 = pins.at(2);
 
     for (;;) {
-        int button_1 = pin1.setInputState();
-        int button_2 = pin2.setInputState();
-        int button_3 = pin3.setInputState();
+        bool button_1 = pin1.setInputState();
+        bool button_2 = pin2.setInputState();
+        bool button_3 = pin3.setInputState();
 
-        if (!step_1  ) {
-            if (pin1.setInputState() == 1 && !keyOneactivated && !keyThreeActivate) {
+        if (!step_1) {
+            if (pin1.setInputState() == 1) {
                 outputPin_1.turnOn();
                 keyOneactivated = true;
                 step_1 = true;
             }
         }
 
-        if (step_1 && !step_2 ) {
-            if (pin2.setInputState() == 1 && keyOneactivated && !keyThreeActivate) {
+        if (step_1 && !step_2) {
+            if (pin2.setInputState() == 1) {
                 outputPin_2.turnOn();
                 keyTwoActivated = true;
                 step_2 = true;
@@ -58,8 +56,8 @@ void Lock::startSecurity() {
             }
         }
 
-        if (step_1 && step_2 && !step_3 ) {
-            if (pin3.setInputState() == 1 && keyOneactivated && keyTwoActivated) {
+        if (step_1 && step_2 && !step_3) {
+            if (pin3.setInputState() == 1) {
                 outputPin_3.turnOn();
                 keyThreeActivate = true;
             } else if (isInvalidKey(button_1, button_2, button_3)) {
@@ -77,16 +75,24 @@ void Lock::startSecurity() {
     }
 }
 
-bool Lock::isInvalidKey(int button_1, int button_2, int button_3) const { return button_1 && step_1 || button_1 &&
-                                                                                                       step_2 || button_3 &&
-                                                                                                                 step_3 || button_2 &&
-                                                                                                                           step_2; }
+bool Lock::isInvalidKey(int button_1, int button_2, int button_3)
+const {
+    return
+            button_1 && step_1 && !step_2
+            || button_3 && step_3 && step_2
+            || button_2 && step_2 && step_1;
+}
 
 void Lock::successfullUnlock() {
     blinkingOn();
 }
 
 bool Lock::isPasswordCreated() {
+    passwordCreator();
+    return pins.size() == counter;
+}
+
+void Lock::passwordCreator() {
     blinkingOn();
 
     do {
@@ -106,11 +112,9 @@ bool Lock::isPasswordCreated() {
 
     } while (counter < 3);
 
-    if(pins.size()==counter){
+    if (pins.size() == counter) {
         blinkingOff();
     }
-
-    return pins.size()==counter;
 }
 
 void Lock::blinkingOff() {

@@ -13,12 +13,15 @@ class InputPin {
 
 public:
     InputPin(int inputPin);
+
     bool setInputState();
+
     int getPin();
+
     virtual ~InputPin();
 
 private:
-    InputCallBack inputCallBack {} ;
+    InputCallBack inputCallBack{};
     int inputPin;
     int previousState{0};
     int actualState{0};

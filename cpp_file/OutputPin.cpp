@@ -9,23 +9,8 @@
 #include <thread>
 #include <mutex>
 
-void OutputPin::controlLed() {
-    switch (state) {
-        case 1:
-            controlOnState();
-            break;
-        case 0:
-            controlOffState();
-            break;
-    }
-}
-
-void OutputPin::controlOnState() {
-    turnOff();
-}
-
-void OutputPin::controlOffState() {
-    turnOn();
+void OutputPin::turnOff() {
+    digitalWrite(outputPin, 0);
 }
 
 OutputPin::OutputPin(int outputPin) : outputPin(outputPin) {
@@ -33,15 +18,8 @@ OutputPin::OutputPin(int outputPin) : outputPin(outputPin) {
     turnOff();
 }
 
-void OutputPin::turnOff() {
-    digitalWrite(outputPin, 0);
-    state = 0;
-}
-
 void OutputPin::turnOn() {
-    std::cout << "inside" << std::endl;
     digitalWrite(outputPin, 1);
-    state = 1;
 }
 
 void OutputPin::startBlinking() {
@@ -61,7 +39,6 @@ void OutputPin::startBlinking() {
             std::this_thread::sleep_for(std::chrono::milliseconds{100});
         }
     }};
-
 }
 
 void OutputPin::stopBlinking() {

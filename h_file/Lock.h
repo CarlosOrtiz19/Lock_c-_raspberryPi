@@ -13,33 +13,31 @@
 class Lock {
 
 public:
-
     Lock();
-    void toggleStatePins(InputPin inputPin, OutputPin outputPin);
+
     void startSecurity();
+
     bool isPasswordCreated();
 
 private:
+    std::vector<int> pins;
     bool keyOneactivated{false};
     bool keyTwoActivated{false};
     bool keyThreeActivate{false};
     bool step_1{};
     bool step_2{};
     bool step_3{};
-    void reset();
-    std::vector<int> pins;
     int counter{0};
-
     InputPin inputPin_1{23};
     InputPin inputPin_2{24};
     InputPin inputPin_3{25};
-
     OutputPin outputPin_1{0};
     OutputPin outputPin_2{2};
     OutputPin outputPin_3{3};
 
-    void successfullUnlock();
+    void reset();
 
+    void successfullUnlock();
 
     void blinkingOn();
 
@@ -50,6 +48,8 @@ private:
     void resetKeys();
 
     bool isInvalidKey(int button_1, int button_2, int button_3) const;
+
+    void passwordCreator();
 };
 
 

@@ -8,5 +8,9 @@ int main() {
     if(lock.isPasswordCreated()){
         lock.startSecurity();
     }
+
+    for (int i = 0; i < ; ++i) {
+        
+    }
     return 0;
 }

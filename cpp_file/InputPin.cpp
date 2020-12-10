@@ -6,10 +6,8 @@
 #include <wiringPi.h>
 #include <iostream>
 
-
-
 InputPin::InputPin(int inputPin) : inputPin(inputPin) {
-    pinMode(inputPin,INPUT);
+    pinMode(inputPin, INPUT);
 }
 
 bool InputPin::setInputState() {

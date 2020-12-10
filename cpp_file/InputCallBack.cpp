@@ -6,7 +6,7 @@
 #include "../h_file/InputCallBack.h"
 
 bool InputCallBack::operator()(bool signalState) {
-    if(signalState){
+    if (signalState) {
         delay(20);
     }
     return signalState;
